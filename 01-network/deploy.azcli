@@ -1,0 +1,8 @@
+LOCATION=northeurope
+DEPLOYMENT_NAME=DeployNetworkAks03
+
+az deployment sub create \
+       --template-file main.bicep \
+       --location $LOCATION \
+       --name $DEPLOYMENT_NAME \
+       --parameters main.bicepparam

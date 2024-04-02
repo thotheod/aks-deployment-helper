@@ -1,0 +1,9 @@
+LOCATION=northeurope
+DEPLOYMENT_NAME=DeployNetworkAks03
+RG=min999-proj99-dev-rg
+
+az deployment group create \
+       --template-file main.bicep \
+       --resource-group $RG \
+       --name $DEPLOYMENT_NAME \
+       --parameters main.bicepparam
