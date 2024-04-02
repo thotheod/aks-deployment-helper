@@ -82,6 +82,16 @@ module aks '../avm/container-service/managed-clutser/main.bicep' = {
     // serviceCidr: '172.16.0.0/16'
     // dnsServiceIP: '172.16.34.10'
     webApplicationRoutingEnabled: applicationRoutingAddOnEnabled
+    
+    // We don not need Azure AD authentication with Azure RBAC, plain RBAC should be enough
+    aadProfileEnableAzureRBAC: false
+    aadProfileManaged: false
+    autoUpgradeProfileUpgradeChannel: 'node-image'
+
+    // azureKeyVaultSecretsProvider: enable by default
+    enableKeyvaultSecretsProvider: true
+    enableSecretRotation: 'true'
+
     primaryAgentPoolProfile: [
       {        
         name: 'systempool'

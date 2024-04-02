@@ -615,7 +615,7 @@ resource managedCluster 'Microsoft.ContainerService/managedClusters@2023-07-02-p
           }
         : null
     }
-    aadProfile: {
+    aadProfile: !aadProfileEnableAzureRBAC ? null :{
       clientAppID: aadProfileClientAppID
       serverAppID: aadProfileServerAppID
       serverAppSecret: aadProfileServerAppSecret
